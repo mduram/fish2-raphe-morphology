@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fish2-raphe"
+version = "0.1.0"
+description = "Fish2 EM raphe morphology, NBLAST clustering, visualization, and connectivity analysis"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "scipy>=1.10",
+  "scikit-learn>=1.3",
+  "matplotlib>=3.7",
+  "plotly>=5.18",
+  "kaleido>=0.2.1",
+  "tqdm>=4.66",
+  "umap-learn>=0.5.5",
+  "neuprint-python>=0.5",
+  "navis>=1.5",
+  "nbformat>=5.9",
+  "pyyaml>=6.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

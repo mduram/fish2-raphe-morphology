@@ -1,0 +1,22 @@
+name: fish2_raphe
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - plotly
+  - tqdm
+  - pyyaml
+  - jupyterlab
+  - pip:
+      - neuprint-python
+      - navis
+      - nblast
+      - umap-learn
+      - kaleido
+      - -e .

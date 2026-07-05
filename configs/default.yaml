@@ -1,0 +1,40 @@
+neuprint:
+  server: neuprint-fish2.janelia.org
+  dataset: fish2
+  token_env: NEUPRINT_APPLICATION_CREDENTIALS
+
+paths:
+  data_dir: data
+  output_dir: outputs
+  skeleton_dir: skeletons
+
+selected_raphe:
+  ids_csv: data/raphe_234_ids.csv
+  previous_output_root: fish2_raphe_morphology_v14_selected_vs_raphe_superior_outputs
+  dataset_key: selected_raphe
+
+raphe_superior_soma_in_roi:
+  exact_rois:
+    - Raphe_Superior
+    - Raphe_Superior1
+  previous_output_root: fish2_raphe_morphology_v20_rapheSuperior_somaInROI_outputs
+  dataset_key: raphe_superior_soma_in_roi
+
+reclustering:
+  linkage_methods:
+    - complete
+    - average
+    - weighted
+  k_values: [6, 8, 10, 12, 14, 16, 18, 20]
+  umap_grid:
+    - {name: nn10_md000, n_neighbors: 10, min_dist: 0.0}
+    - {name: nn15_md000, n_neighbors: 15, min_dist: 0.0}
+    - {name: nn20_md000, n_neighbors: 20, min_dist: 0.0}
+    - {name: nn25_md001, n_neighbors: 25, min_dist: 0.01}
+    - {name: nn30_md001, n_neighbors: 30, min_dist: 0.01}
+    - {name: nn40_md005, n_neighbors: 40, min_dist: 0.05}
+
+static_3d:
+  side_direction: left
+  shell_alpha: 0.035
+  views: [top, side, angled]
